@@ -25,24 +25,30 @@ It wrote the code, ran away, and now the game is unplayable.
 
 ## 📝 Document Your Experience
 
-- [ ] Describe the game's purpose.
-- [ ] Detail which bugs you found.
-- [ ] Explain what fixes you applied.
+Game Purpose: The purpose of this game is to guess a randomly generated secret number. The game gives hints telling the player to guess higher or lower until they find the correct number.
+
+Bugs Found: I found three main bugs. First, the game sometimes gave incorrect higher and lower hints. Second, the New Game button didn't reset everything properly. Third, the guess history would update one guess late.
+
+Fixes Applied: I used AI in VS Code to help find and fix the bugs. We fixed the number comparison, corrected the New Game reset, and updated how the guess history displays. I also moved the game logic into logic_utils.py and tested the game to make sure everything worked.
 
 ## 📸 Demo Walkthrough
 
-Describe your fixed game in numbered steps so a reader can follow along without watching a video:
+## 📸 Demo Walkthrough
 
-1. <!-- Describe this step -->
-2. <!-- Describe this step -->
-3. <!-- Describe this step -->
-4. <!-- Describe this step -->
-5. <!-- Add more steps as needed -->
-
-**Screenshot** *(optional)*: <!-- Insert a screenshot of your fixed, winning game here -->
+1. Open the game using Streamlit and select a difficulty.
+2. Expand Developer Debug Info to see the secret number for testing.
+3. Enter a number higher than the secret and click Submit Guess. The game displays "Go LOWER!"
+4. Enter a number lower than the secret. The game displays "Go HIGHER!"
+5. Check the Developer Debug Info to confirm each guess appears in the history and the attempts counter updates.
+6. Enter the correct secret number to win the game.
+7. Click New Game to start another round. The attempts, history, and game status reset so the player can guess again.
 
 ## 🧪 Test Results
 
+```text
+python3 -m pytest -q
+........                                         [100%]
+8 passed in 1.71s
 ```
 # Paste your pytest output here, e.g.:
 # pytest tests/
